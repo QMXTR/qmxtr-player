@@ -3,8 +3,14 @@
 		<q-workspace>
 			<q-panel>
 				<q-tab>
-					<q-tab-panel title="Album Arts">
+					<q-tab-panel key="aa" title="Album Arts" default>
 						<q-aa-panel></q-aa-panel>
+					</q-tab-panel>
+					<q-tab-panel key="mp1" title="My Panel">
+						<h1>Hello, World!</h1>
+					</q-tab-panel>
+					<q-tab-panel key="mp2" title="My Panel2">
+						<h1>Lorem, ipsum!</h1>
 					</q-tab-panel>
 				</q-tab>
 			</q-panel>
