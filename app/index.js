@@ -74,7 +74,8 @@ qmxtr.player.addToQueue({
 qmxtr.player.addToQueue({
 	src: '/test/audio/001.mp3',
 	title: 'Shelter',
-	author: 'Porter Robinson'
+	author: 'Porter Robinson',
+	albumArt: 'http://img1.ak.crunchyroll.com/i/spire2/26c31ebcac89f27556d7f16298b86dbd1476500039_full.jpg'
 });
 
 qmxtr.player.addToQueue({

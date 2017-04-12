@@ -3,13 +3,13 @@
 		<q-workspace>
 			<q-panel>
 				<q-tab>
-					<q-tab-panel key="aa" title="Album Arts" default>
+					<q-tab-panel key="aa" title="Album Arts" default @active="drawWave">
 						<q-aa-panel></q-aa-panel>
 					</q-tab-panel>
-					<q-tab-panel key="mp1" title="My Panel">
+					<q-tab-panel key="mp1" title="My Panel" @active="drawWave">
 						<h1>Hello, World!</h1>
 					</q-tab-panel>
-					<q-tab-panel key="mp2" title="My Panel2">
+					<q-tab-panel key="mp2" title="My Panel2" @active="drawWave">
 						<h1>Lorem, ipsum!</h1>
 					</q-tab-panel>
 				</q-tab>
@@ -41,5 +41,11 @@
 </style>
 
 <script>
-	export default {};
+	export default {
+		methods: {
+			drawWave(){
+				this.$store.dispatch('draw-wave');
+			}
+		}
+	};
 </script>
