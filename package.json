@@ -4,15 +4,12 @@
   "description": "A fancy music player which supports queue, eq and lyrics.",
   "main": "app/index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HelloWorld017/qmxtr.git"
-  },
-  "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
   },
   "keywords": [
     "music",

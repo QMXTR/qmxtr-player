@@ -84,4 +84,52 @@ qmxtr.player.addToQueue({
 	author: 'Shawn Wasabi'
 });
 
+qmxtr.player.addToQueue({
+	src: '/test/audio/003.mp3',
+	title: '告白ライバル宣言',
+	author: 'HoneyWorks'
+});
+
+qmxtr.player.addToQueue({
+	src: '/test/audio/004.mp3',
+	title: 'DIARY',
+	author: 'KK'
+});
+
+qmxtr.player.addToQueue({
+	src: '/test/audio/005.mp3',
+	title: 'MIST',
+	author: 'KK'
+});
+
+qmxtr.player.addToQueue({
+	src: '/test/audio/006.mp3',
+	title: 'それがあなたの幸せとしても',
+	author: 'KK'
+});
+
+qmxtr.player.addToQueue({
+	src: '/test/audio/007.mp3',
+	title: 'Stella-rium',
+	author: 'Kano'
+});
+
+qmxtr.player.addToQueue({
+	src: '/test/audio/008.mp3',
+	title: '幻想ドライブ',
+	author: '和島あみ'
+});
+
+qmxtr.player.addToQueue({
+	src: '/test/audio/009.mp3',
+	title: '망상세',
+	author: 'Reol'
+});
+
+qmxtr.player.addToQueue({
+	src: '/test/audio/010.mp3',
+	title: 'MONSTER',
+	author: 'Reol'
+});
+
 window.qmxtr = qmxtr;
