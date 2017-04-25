@@ -8,7 +8,6 @@ import VolumePlugin from "qmxtr-volume";
 import App from "./App.vue";
 
 const qmxtr = {};
-console.log(Qmxtr);
 
 qmxtr.equalizer = new EqualizerPlugin({
 	60: 1,
@@ -27,7 +26,7 @@ qmxtr.volume = new VolumePlugin(1, 1);
 qmxtr.keyInput = new KeyInputPlugin({});
 
 qmxtr.vis = document.createElement('div');
-qmxtr.player = new Qmxtr.QPlayer({
+qmxtr.player = new Qmxtr({
 	visualizer: qmxtr.vis,
 	plugins: [
 		qmxtr.volume,
@@ -37,7 +36,9 @@ qmxtr.player = new Qmxtr.QPlayer({
 });
 
 Vue.use(Vuex);
-Vue.use(Qmxtr.QmxtrUI);
+Vue.use(Qmxtr);
+Vue.use(VolumePlugin);
+Vue.use(EqualizerPlugin);
 
 qmxtr.store = new Vuex.Store({
 	state: qmxtr.player.defaultStates,

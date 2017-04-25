@@ -66,7 +66,7 @@ module.exports = {
 				loader: cssExtract
 			},
 			{
-				test: /\.(png|jpe?g|gif|svg|ttf|woff2?|eot|otf)$/,
+				test: /\.(png|jpe?g|gif|svg|ttf|woff2?|eot|otf|wav)$/,
 				loader: 'file-loader',
 				options: {
 					name: 'files/[name].[ext]?[hash]'
