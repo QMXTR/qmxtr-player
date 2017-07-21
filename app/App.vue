@@ -1,27 +1,43 @@
 <template>
-	<div id="app">
-		<q-workspace>
-			<q-panel>
-				<q-tab>
-					<q-tab-panel key="aa" title="Album Arts" default @active="updatePanel">
-						<q-aa-panel></q-aa-panel>
-					</q-tab-panel>
+	<q-main id="app">
+		<q-panel>
+			<q-workspace>
+				<q-panel>
+					<q-tab>
+						<q-tab-panel title="Info" default>
+							<q-aa-panel></q-aa-panel>
+						</q-tab-panel>
 
-					<q-tab-panel key="vol" title="Volume" @active="updatePanel">
-						<q-volume-panel ref="vol"></q-volume-panel>
-					</q-tab-panel>
+						<q-tab-panel title="Visual">
+							<q-video-panel></q-video-panel>
+						</q-tab-panel>
 
-					<q-tab-panel key="eq" title="Equalizer" @active="updatePanel">
-						<q-equalizer-panel ref="eq"></q-equalizer-panel>
-					</q-tab-panel>
-				</q-tab>
-			</q-panel>
-		</q-workspace>
-		<q-aside>
-			<q-panel>
-				<q-playlist></q-playlist>
-			</q-panel>
-		</q-aside>
+						<q-tab-panel title="Volume">
+							<q-volume-panel></q-volume-panel>
+						</q-tab-panel>
+
+						<q-tab-panel title="Equalizer">
+							<q-equalizer-panel></q-equalizer-panel>
+						</q-tab-panel>
+
+						<q-tab-panel title="Queue Editor">
+							<q-edit-list-panel context="Queue" :playlist="queue">
+							</q-edit-list-panel>
+						</q-tab-panel>
+
+						<q-tab-panel title="Playlist Selector">
+							<q-select-list-panel>
+							</q-select-list-panel>
+						</q-tab-panel>
+					</q-tab>
+				</q-panel>
+			</q-workspace>
+			<q-aside>
+				<q-panel>
+					<q-queue></q-queue>
+				</q-panel>
+			</q-aside>
+		</q-panel>
 		<q-controlbar>
 			<q-panel>
 				<q-controller></q-controller>
@@ -29,7 +45,7 @@
 				<q-volume></q-volume>
 			</q-panel>
 		</q-controlbar>
-	</div>
+	</q-main>
 </template>
 
 <style lang="less">
@@ -93,15 +109,11 @@
 
 <script>
 	export default {
-		methods: {
-			updatePanel(){
-				this.drawWave();
-				this.$refs.vol.update();
-				this.$refs.eq.update();
-			},
-
-			drawWave(){
-				this.$store.dispatch('draw-wave');
+		computed: {
+			queue() {
+				if(!window.qmxtr) return null;
+				if(!window.qmxtr.player) return null;
+				return window.qmxtr.player.queuePlaylist;
 			}
 		}
 	};

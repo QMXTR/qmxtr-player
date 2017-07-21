@@ -8,6 +8,7 @@ import VolumePlugin from "qmxtr-volume";
 import App from "./App.vue";
 
 const qmxtr = {};
+window.qmxtr = qmxtr;
 
 qmxtr.equalizer = new EqualizerPlugin({
 	60: 1,
@@ -36,9 +37,7 @@ qmxtr.player = new Qmxtr({
 });
 
 Vue.use(Vuex);
-Vue.use(Qmxtr);
-Vue.use(VolumePlugin);
-Vue.use(EqualizerPlugin);
+Vue.use(qmxtr.player);
 
 qmxtr.store = new Vuex.Store({
 	state: qmxtr.player.defaultStates,
@@ -133,4 +132,9 @@ qmxtr.player.addToQueue({
 	author: 'Reol'
 });
 
-window.qmxtr = qmxtr;
+qmxtr.player.addToQueue({
+	src: '/test/audio/012.ogg',
+	title: 'ヤキモチの答え',
+	author: 'HoneyWorks feat.GUMI',
+	video: '/test/video/yakimochi-kotae.mp4'
+});
