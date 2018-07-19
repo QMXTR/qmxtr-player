@@ -20,21 +20,19 @@
 							<q-equalizer-panel></q-equalizer-panel>
 						</q-tab-panel>
 
-						<q-tab-panel title="Queue Editor">
-							<q-edit-list-panel context="Queue" :playlist="queue">
-							</q-edit-list-panel>
+						<q-tab-panel title="Library">
+							<q-library></q-library>
 						</q-tab-panel>
 
-						<q-tab-panel title="Playlist Selector">
-							<q-select-list-panel>
-							</q-select-list-panel>
+						<q-tab-panel title="Search">
+							<q-query></q-query>
 						</q-tab-panel>
 					</q-tab>
 				</q-panel>
 			</q-workspace>
 			<q-aside>
 				<q-panel>
-					<q-queue></q-queue>
+					<q-playlist></q-playlist>
 				</q-panel>
 			</q-aside>
 		</q-panel>
@@ -109,6 +107,12 @@
 
 <script>
 	export default {
+		data() {
+			return {
+				val: 'Stereo Mix'
+			};
+		},
+
 		computed: {
 			queue() {
 				if(!window.qmxtr) return null;

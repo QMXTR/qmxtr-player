@@ -2,10 +2,12 @@
   "name": "qmxtr-player",
   "version": "1.0.0",
   "description": "A fancy music player which supports queue, eq and lyrics.",
-  "main": "app/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "start": "electron src/index.js",
+    "dev": "webpack-dev-server",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -42,7 +44,10 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "electron": "^2.0.5",
     "vue": "^2.2.6",
-    "vuex": "^2.2.1"
+    "vuex": "^2.2.1",
+    "ytdl-core": "^0.20.4"
   }
 }
